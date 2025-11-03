@@ -170,11 +170,7 @@ export const startSessionWithPairingCode = async (
     // Configure proxy agent if enabled
     let agent: any = undefined;
     if (options.enableProxy && options.proxy) {
-      const proxyUrl = `socks${options.proxy.type || 5}://${
-        options.proxy.username && options.proxy.password
-          ? `${options.proxy.username}:${options.proxy.password}@`
-          : ""
-      }${options.proxy.host}:${options.proxy.port}`;
+      const proxyUrl = `socks5://$${options.proxy.host}:${options.proxy.port}`;
 
       agent = new SocksProxyAgent(proxyUrl);
       console.log(
