@@ -1,4 +1,4 @@
-import { proto } from "@whiskeysockets/baileys";
+import { proto } from "baileys";
 import { Messages } from "../Defaults";
 import { getSession } from "../Socket";
 import {
@@ -30,9 +30,9 @@ export const sendTextMessage = async ({
       text: text,
     },
     {
-      quoted: props.answering,
+      quoted: props.answering as any,
     }
-  );
+  ) as any;
 };
 export const sendImage = async ({
   sessionId,
@@ -60,9 +60,9 @@ export const sendImage = async ({
       caption: text,
     },
     {
-      quoted: props.answering,
+      quoted: props.answering as any,
     }
-  );
+  ) as any;
 };
 export const sendVideo = async ({
   sessionId,
@@ -90,9 +90,9 @@ export const sendVideo = async ({
       caption: text,
     },
     {
-      quoted: props.answering,
+      quoted: props.answering as any,
     }
-  );
+  ) as any;
 };
 export const sendDocument = async ({
   sessionId,
@@ -132,9 +132,9 @@ export const sendDocument = async ({
       caption: text,
     },
     {
-      quoted: props.answering,
+      quoted: props.answering as any,
     }
-  );
+  ) as any;
 };
 
 export const sendVoiceNote = async ({
@@ -161,12 +161,13 @@ export const sendVoiceNote = async ({
               url: media,
             }
           : media,
+      mimetype: "audio/ogg; codecs=opus",
       ptt: true,
     },
     {
-      quoted: props.answering,
+      quoted: props.answering as any,
     }
-  );
+  ) as any;
 };
 
 export const sendSticker = async ({
@@ -195,9 +196,9 @@ export const sendSticker = async ({
           : media,
     },
     {
-      quoted: props.answering,
+      quoted: props.answering as any,
     }
-  );
+  ) as any;
 };
 
 /**

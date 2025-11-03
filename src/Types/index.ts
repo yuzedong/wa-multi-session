@@ -1,4 +1,4 @@
-import { WAMessageUpdate, proto } from "@whiskeysockets/baileys";
+import { WAMessageUpdate, proto } from "baileys";
 
 export interface SendMessageTypes {
   to: string | number;
@@ -24,6 +24,11 @@ export interface MessageReceived extends proto.IWebMessageInfo {
    * Your Session ID
    */
   sessionId: string;
+
+  /**
+   * Message key (required for media operations)
+   */
+  key: proto.IMessageKey;
 
   /**
    * @param path save image location path with extension
@@ -53,6 +58,20 @@ export interface StartSessionParams {
    */
   printQR?: boolean;
 
+  // proxy configuration
+  /**
+   * Enable proxy for WhatsApp connection
+   */
+  enableProxy?: boolean;
+  /**
+   * SOCKS proxy configuration
+   * @example { host: '127.0.0.1', port: 7891, type: 5 }
+   */
+  proxy?: {
+    host: string;
+    port: number;
+  };
+
   // session events
   onQRUpdated?: (qr: string) => void;
   onConnected?: () => void;
@@ -69,6 +88,20 @@ export interface StartSessionWithPairingCodeParams {
    * Phone Number with Country Code
    */
   phoneNumber: string;
+
+  // proxy configuration
+  /**
+   * Enable proxy for WhatsApp connection
+   */
+  enableProxy?: boolean;
+  /**
+   * SOCKS proxy configuration
+   * @example { host: '127.0.0.1', port: 7891, type: 5 }
+   */
+  proxy?: {
+    host: string;
+    port: number;
+  };
 }
 
 export type MessageUpdated = WAMessageUpdate & {

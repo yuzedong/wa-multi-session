@@ -225,7 +225,7 @@ whatsapp.setCredentialsDir("my_custom_dir");
 
 ### v3.7.0 December 2024 (LATEST)
 
-- Upgrading @whiskeysockets/baileys to ^6.7.9
+- Upgrading baileys to ^6.7.9
 - Fix invalid phone number
 - Remove validation is registered phone number
 

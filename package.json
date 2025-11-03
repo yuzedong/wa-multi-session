@@ -1,7 +1,7 @@
 {
-  "name": "wa-multi-session",
-  "version": "3.8.3",
-  "description": "Multi Session Whatsapp Library",
+  "name": "@yuzedong/wa-multi-session",
+  "version": "1.0.1",
+  "description": "自定义wa-multi-session，基于wa-multi-session@3.8.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -18,15 +18,16 @@
     "@adiwajshing/keyed-db": "^0.2.4",
     "@hapi/boom": "^10.0.1",
     "@types/qrcode-terminal": "^0.12.2",
-    "@whiskeysockets/baileys": "^6.7.18",
+    "baileys": "^7.0.0-rc.6",
     "link-preview-js": "^3.0.14",
     "mime": "^3.0.0",
     "pino": "^9.5.0",
-    "qrcode-terminal": "^0.12.0"
+    "qrcode-terminal": "^0.12.0",
+    "socks-proxy-agent": "^8.0.5"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:mimamch/wa-multi-session.git"
+    "url": "git@github.com:yuzedong/wa-multi-session.git"
   },
   "devDependencies": {
     "@types/mime": "^3.0.1",
